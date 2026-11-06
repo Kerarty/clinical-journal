@@ -1,0 +1,455 @@
+<style>
+    .ms-root {
+      --ms-paper: #efe7d2;
+      --ms-paper2: #f7f0df;
+      --ms-ink: #16130f;
+      --ms-ink60: rgba(22, 19, 15, .62);
+      --ms-ink40: rgba(22, 19, 15, .4);
+      --ms-line: rgba(22, 19, 15, .16);
+      --ms-coral: #e8553f;
+      --ms-coral-deep: #bf3a2b;
+      position: relative;
+      background: var(--ms-paper);
+      color: var(--ms-ink);
+      font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+      overflow: hidden;
+    }
+    .ms-wrap { position: relative; max-width: 1180px; margin: 0 auto; padding: 10px 22px 40px; }
+    .ms-sechead {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      align-items: baseline;
+      justify-content: space-between;
+      border-top: 1px solid var(--ms-line);
+      padding-top: 14px;
+      margin-top: 26px;
+      font-size: 11px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--ms-ink40);
+      font-weight: 600;
+    }
+    .ms-sechead .ms-secnum { color: var(--ms-coral); font-style: italic; font-size: 13px; }
+    .ms-h2 {
+      margin: 14px 0 8px;
+      font-weight: 900;
+      font-size: clamp(1.7rem, 4.6vw, 3rem);
+      line-height: 1.02;
+      letter-spacing: -.025em;
+    }
+    .ms-h2 em {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: .97em;
+    }
+    .ms-h2 .ms-dot { color: var(--ms-coral); }
+    .ms-sub { max-width: 62ch; font-size: 14px; line-height: 1.65; color: var(--ms-ink60); margin: 0 0 22px; }
+    .ms-sub strong { color: var(--ms-ink); }
+
+    /* появление при скролле */
+    .ms-reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+    .ms-reveal.ms-in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .ms-reveal { opacity: 1; transform: none; transition: none; } }
+
+    /* АНАМНЕЗ */
+    .ms-tl { position: relative; margin: 10px 0 8px; padding-left: 26px; }
+    .ms-tl::before {
+      content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px;
+      width: 1px; background: linear-gradient(var(--ms-coral) 0%, var(--ms-line) 100%);
+    }
+    .ms-tl-item { position: relative; padding: 6px 0 26px; }
+    .ms-tl-item::before {
+      content: ""; position: absolute; left: -23px; top: 14px;
+      width: 9px; height: 9px; border-radius: 50%;
+      background: var(--ms-coral); border: 2px solid var(--ms-paper);
+      box-shadow: 0 0 0 1px var(--ms-coral);
+    }
+    .ms-tl-date {
+      font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--ms-coral-deep); font-weight: 700; margin-bottom: 6px;
+    }
+    .ms-tl-title { font-weight: 800; font-size: 19px; letter-spacing: -.01em; margin-bottom: 8px; }
+    .ms-tl-text { font-size: 14px; line-height: 1.65; color: var(--ms-ink60); max-width: 58ch; margin: 0 0 14px; }
+    .ms-tl-photo {
+      display: block; width: min(420px, 100%);
+      border: 1px solid var(--ms-line); border-radius: 10px;
+      box-shadow: 0 14px 30px rgba(22, 19, 15, .14);
+      transform: rotate(-1.2deg); background: var(--ms-paper2);
+    }
+    .ms-tl-item:nth-child(even) .ms-tl-photo { transform: rotate(1.2deg); }
+    .ms-tl-cap {
+      margin-top: 8px; font-size: 11px; letter-spacing: 1.6px;
+      text-transform: uppercase; color: var(--ms-ink40);
+    }
+
+    /* ДИАГНОЗ */
+    .ms-diag {
+      display: grid; grid-template-columns: 1fr; gap: 24px; align-items: start;
+    }
+    @media (min-width: 880px) { .ms-diag { grid-template-columns: 1.25fr .75fr; } }
+    .ms-diag-card {
+      position: relative; background: var(--ms-paper2);
+      border: 1px solid var(--ms-line); border-radius: 12px;
+      padding: 26px 26px 22px;
+    }
+    .ms-diag-card::after {
+      content: "ПОДТВЕРЖДЕНО"; position: absolute; top: 16px; right: 14px;
+      transform: rotate(8deg);
+      border: 2px solid rgba(191, 58, 43, .7); color: rgba(191, 58, 43, .8);
+      border-radius: 6px; padding: 6px 10px; font-size: 10px; font-weight: 800;
+      letter-spacing: 2px; background: rgba(247, 240, 223, .55);
+    }
+    .ms-diag-row {
+      display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px dashed var(--ms-line);
+      font-size: 13.5px; line-height: 1.5;
+    }
+    .ms-diag-row:last-child { border-bottom: none; }
+    .ms-diag-row b { min-width: 108px; color: var(--ms-ink40); font-weight: 600; font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; padding-top: 3px; }
+    .ms-diag-row span strong { color: var(--ms-coral-deep); }
+    .ms-doc {
+      position: relative; border: 1px solid var(--ms-line); border-radius: 12px;
+      overflow: hidden; background: var(--ms-paper2);
+    }
+    .ms-doc img { display: block; width: 100%; height: auto; }
+    .ms-doc-cap {
+      padding: 10px 14px; font-size: 11px; letter-spacing: 1.6px;
+      text-transform: uppercase; color: var(--ms-ink40);
+      border-top: 1px solid var(--ms-line);
+    }
+
+    /* НАЗНАЧЕНИЕ */
+    .ms-rx {
+      position: relative; background: var(--ms-paper2);
+      border: 1px solid var(--ms-line); border-radius: 12px;
+      padding: 30px 28px 26px; max-width: 720px;
+    }
+    .ms-rx::before {
+      content: "Rx"; position: absolute; top: 10px; right: 22px;
+      font-family: 'Playfair Display', Georgia, serif; font-style: italic;
+      font-size: 44px; color: var(--ms-coral); opacity: .5;
+    }
+    .ms-rx-head { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--ms-ink40); margin-bottom: 16px; font-weight: 600; }
+    .ms-rx-line { display: flex; gap: 12px; padding: 9px 0; border-bottom: 1px dashed var(--ms-line); font-size: 14.5px; line-height: 1.55; }
+    .ms-rx-line:last-of-type { border-bottom: none; }
+    .ms-rx-line .ms-rx-n { color: var(--ms-coral); font-style: italic; font-weight: 700; min-width: 30px; font-family: 'Playfair Display', Georgia, serif; }
+    .ms-rx-line strong { color: var(--ms-ink); }
+    .ms-rx-note { margin-top: 16px; font-size: 12px; color: var(--ms-ink40); line-height: 1.6; }
+    .ms-rx-sign { margin-top: 18px; display: flex; justify-content: space-between; align-items: baseline; font-size: 12px; color: var(--ms-ink60); }
+    .ms-rx-sign .ms-rx-script { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 22px; color: var(--ms-ink); }
+
+    /* ГАЛЕРЕЯ */
+    .ms-gal { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
+    .ms-gal-item {
+      position: relative; border: 1px solid var(--ms-line); border-radius: 10px;
+      overflow: hidden; cursor: pointer; background: #101010; padding: 0;
+    }
+    .ms-gal-item img {
+      display: block; width: 100%; height: 250px; object-fit: cover;
+      filter: contrast(1.04) brightness(.94);
+      transition: filter .25s ease, transform .3s ease;
+    }
+    .ms-gal-item:hover img { filter: none; transform: scale(1.025); }
+    .ms-gal-cap {
+      display: flex; justify-content: space-between; gap: 8px;
+      padding: 9px 12px; font-size: 10.5px; letter-spacing: 1.4px;
+      text-transform: uppercase; color: rgba(247, 240, 223, .8);
+      background: #101010;
+    }
+    .ms-lightbox {
+      position: fixed; inset: 0; z-index: 60;
+      background: rgba(16, 14, 11, .88);
+      display: none; align-items: center; justify-content: center;
+      padding: 26px; cursor: zoom-out;
+    }
+    .ms-lightbox.ms-open { display: flex; }
+    .ms-lightbox img {
+      max-width: min(92vw, 900px); max-height: 86vh;
+      border-radius: 10px; box-shadow: 0 30px 80px rgba(0, 0, 0, .6);
+    }
+    .ms-lightbox .ms-lb-cap {
+      position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%);
+      color: rgba(247, 240, 223, .85); font-size: 11px; letter-spacing: 1.6px; text-transform: uppercase;
+    }
+
+    /* ПРОГНОЗ */
+    .ms-fin {
+      position: relative; background: var(--ms-paper2);
+      border: 1px solid var(--ms-line); border-radius: 14px;
+      padding: 34px 30px; max-width: 760px; margin: 0 auto;
+    }
+    .ms-fin-letter { font-size: 15.5px; line-height: 1.8; color: var(--ms-ink); }
+    .ms-fin-letter p { margin: 0 0 14px; }
+    .ms-fin-letter .ms-fin-sign {
+      font-family: 'Playfair Display', Georgia, serif; font-style: italic;
+      font-size: 21px; margin-top: 20px; color: var(--ms-ink);
+    }
+    .ms-fin-letter strong { color: var(--ms-coral-deep); }
+    .ms-fin-actions { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+    .ms-fin-btn {
+      display: inline-flex; align-items: center; gap: 9px;
+      background: var(--ms-ink); color: var(--ms-paper);
+      border-radius: 999px; padding: 13px 24px;
+      font-size: 12px; font-weight: 600; letter-spacing: 1.6px;
+      text-transform: uppercase; border: none; cursor: pointer;
+      font-family: inherit; transition: background .2s ease;
+    }
+    .ms-fin-btn:hover { background: var(--ms-coral-deep); color: #fff; }
+    .ms-fin-hint { font-size: 11px; color: var(--ms-ink40); }
+    .ms-confetti { position: fixed; inset: 0; pointer-events: none; z-index: 70; overflow: hidden; }
+    .ms-confetti span {
+      position: absolute; font-size: 20px; will-change: transform, opacity;
+      animation: ms-fly 2.6s ease-out forwards;
+    }
+    @keyframes ms-fly {
+      0% { transform: translate(0, 0) rotate(0deg) scale(.7); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translate(var(--dx), var(--dy)) rotate(var(--rot)) scale(1.15); opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) { .ms-confetti span { animation: none; opacity: 0; } }
+
+    .ms-foot {
+      border-top: 1px solid var(--ms-line); margin-top: 34px; padding-top: 16px;
+      display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between;
+      font-size: 11px; letter-spacing: 1.8px; text-transform: uppercase;
+      color: var(--ms-ink60); font-weight: 600;
+    }
+    .ms-foot small { font-size: 11px; letter-spacing: .4px; text-transform: none; font-weight: 400; color: var(--ms-ink40); }
+</style>
+
+<div class="ms-root">
+
+  <div class="ms-wrap">
+
+    <!-- II. АНАМНЕЗ -->
+    <section id="anamnez">
+      <div class="ms-sechead ms-reveal">
+        <span><span class="ms-secnum">II.</span> АНАМНЕЗ · ИСТОРИЯ РАЗВИТИЯ</span>
+        <span>04 ЭПИЗОДА · 5 ЛЕТ НАБЛЮДЕНИЯ</span>
+      </div>
+      <h2 class="ms-h2 ms-reveal">Как болезнь <em>развивалась</em><span class="ms-dot">.</span></h2>
+      <p class="ms-sub ms-reveal">Клиническая картина ясная и <strong>необратимая</strong>: с каждым эпизодом состояние пациента улучшается, а зависимость — закрепляется.</p>
+
+      <div class="ms-tl">
+        <div class="ms-tl-item ms-reveal">
+          <div class="ms-tl-date">01.09.2021 · ЭПИЗОД I</div>
+          <div class="ms-tl-title">Первое обращение</div>
+          <p class="ms-tl-text">Знакомство. Диагностическая ошибка: пациент ещё не знал, что встретил своего единственного лечащего специалиста. Симптомы дебютировали в тот же день — улыбка без видимой причины.</p>
+        </div>
+        <div class="ms-tl-item ms-reveal">
+          <div class="ms-tl-date">19.10.2021 · ЭПИЗОД II</div>
+          <div class="ms-tl-title">Начало системной терапии</div>
+          <p class="ms-tl-text">Начали встречаться. Терапия подействовала с первого приёма. С этого дня наблюдение ведётся непрерывно — без единой жалобы на побочные эффекты.</p>
+        </div>
+        <div class="ms-tl-item ms-reveal">
+          <div class="ms-tl-date">ФИКСАЦИЯ · ЭПИЗОД III</div>
+          <div class="ms-tl-title">Терапия открытым огнём</div>
+          <p class="ms-tl-text">Ночной сеанс у костра. Доказано: рядом с ней время замедляется, а бабочки в животе — не метафора, а документированное явление.</p>
+          <img class="ms-tl-photo" src="photos/bonfire.jpg" alt="Ночь у костра" loading="lazy">
+          <div class="ms-tl-cap">FIG. 02 — Сеанс у костра · эффект присутствия</div>
+        </div>
+        <div class="ms-tl-item ms-reveal">
+          <div class="ms-tl-date">ФИКСАЦИЯ · ЭПИЗОД IV</div>
+          <div class="ms-tl-title">Сеанс в темноте зала</div>
+          <p class="ms-tl-text">Кинотеатр. Фильм не зафиксирован — внимание пациента было полностью занято другом протоколом: держать за руку.</p>
+          <img class="ms-tl-photo" src="photos/cinema.jpg" alt="Кино" loading="lazy">
+          <div class="ms-tl-cap">FIG. 03 — Побочный эффект: учащённое сердцебиение</div>
+        </div>
+        <div class="ms-tl-item ms-reveal">
+          <div class="ms-tl-date">ФИКСАЦИЯ · ЭПИЗОД V</div>
+          <div class="ms-tl-title">Водные процедуры, назначенные вдвоём</div>
+          <p class="ms-tl-text">Бассейн. Температура воды в норме, температура пациента — выше. Реабилитации не подлежит, продлено бессрочно.</p>
+          <img class="ms-tl-photo" src="photos/pool.jpg" alt="Бассейн" loading="lazy">
+          <div class="ms-tl-cap">FIG. 04 — Совместное назначение · летний протокол</div>
+        </div>
+        <div class="ms-tl-item ms-reveal">
+          <div class="ms-tl-date">ФИКСАЦИЯ · ЭПИЗОД VI</div>
+          <div class="ms-tl-title">Прогулочные профилактики</div>
+          <p class="ms-tl-text">Парки, арки, цветочные рамки. Профилактика признана эффективной: без этих прогулок состояние пациента стабильно ухудшается от тоски.</p>
+          <img class="ms-tl-photo" src="photos/park.jpg" alt="Прогулка в парке" loading="lazy">
+          <div class="ms-tl-cap">FIG. 05 — Профилактика в цветочной рамке</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- III. ДИАГНОЗ -->
+    <section id="diagnos">
+      <div class="ms-sechead ms-reveal">
+        <span><span class="ms-secnum">III.</span> ДИАГНОЗ · ЗАКЛЮЧЕНИЕ СПЕЦИАЛИСТА</span>
+        <span>КАБИНЕТ № 19.10 · ОЧЕРЕДЬ: 0 ЧЕЛ.</span>
+      </div>
+      <h2 class="ms-h2 ms-reveal">Поставлен <em>диагноз</em><span class="ms-dot">.</span></h2>
+      <p class="ms-sub ms-reveal">Заключение основано на пяти годах наблюдений, 1892 днях данных и одном безоговорочном сердце.</p>
+
+      <div class="ms-diag ms-reveal">
+        <div class="ms-diag-card">
+          <div class="ms-diag-row"><b>Диагноз</b><span><strong>Хроническая Наташезависимость</strong>, стадия «роднулечка», течение пожизненное.</span></div>
+          <div class="ms-diag-row"><b>Симптомы</b><span>Улыбки без причины · перепроверка телефона каждые 4 минуты · «ещё пять минут» вместо «пора домой» · планирование будущего с одним человеком.</span></div>
+          <div class="ms-diag-row"><b>Триггеры</b><span>Её голос · её смех · слово «солнышко» · фотографии · расстояние свыше 0 км.</span></div>
+          <div class="ms-diag-row"><b>Обострения</b><span>При каждой разлуке. Пик зафиксирован: 5 дней без встречи — уже критическая тоска.</span></div>
+          <div class="ms-diag-row"><b>Сопутствующее</b><span>Счастье. Хроническое, стабильно высокое, лечению не подлежит.</span></div>
+          <div class="ms-diag-row"><b>Прогноз</b><span><strong>Неизлечим.</strong> Пациент отказался от лечения и попросил назначить максимум.</span></div>
+        </div>
+        <div class="ms-doc">
+          <img src="photos/medic.jpg" alt="Лечащий специалист на посту" loading="lazy">
+          <div class="ms-doc-cap">Лечащий специалист — на посту. Диагнозы ставит, тоскует тоже.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IV. НАЗНАЧЕНИЕ -->
+    <section id="recept">
+      <div class="ms-sechead ms-reveal">
+        <span><span class="ms-secnum">IV.</span> НАЗНАЧЕНИЕ · ТЕРАПЕВТИЧЕСКИЙ ПЛАН</span>
+        <span>ФОРМА № 1 · ДЕЙСТВИТЕЛЕН: ВСЕГДА</span>
+      </div>
+      <h2 class="ms-h2 ms-reveal">Назначено <em>пожизненно</em><span class="ms-dot">.</span></h2>
+      <p class="ms-sub ms-reveal">Терапия подобрана индивидуально. Замена не предусмотрена конструкцией.</p>
+
+      <div class="ms-rx ms-reveal">
+        <div class="ms-rx-head">История болезни № 001 · Пациенту: мне · Лечащий: Наташа</div>
+        <div class="ms-rx-line"><span class="ms-rx-n">1.</span><span><strong>Фото Наташи</strong> — принимать 3 раза в день до и после еды. При обострении тоски — вне очереди.</span></div>
+        <div class="ms-rx-line"><span class="ms-rx-n">2.</span><span><strong>Голосовые «солнышко, малыш»</strong> — по требованию, без суточного лимита. Передозировка невозможна физически.</span></div>
+        <div class="ms-rx-line"><span class="ms-rx-n">3.</span><span><strong>Объятия</strong> — курс пожизненный, без перерывов. Пропуск дозы компенсируется удвоенной следующей.</span></div>
+        <div class="ms-rx-line"><span class="ms-rx-n">4.</span><span><strong>Встречи</strong> — как можно чаще. Последний перерыв в 5 дней признан врачебной ошибкой, не повторять.</span></div>
+        <div class="ms-rx-line"><span class="ms-rx-n">5.</span><span><strong>«Роднулечка»</strong> — универсальный antidot. Применять при любой жалобе. Эффективность: 100%.</span></div>
+        <div class="ms-rx-note">Отпуск по рецепту, действующему бессрочно. Повторно не выписывается — курс уже назначен судьбой.</div>
+        <div class="ms-rx-sign"><span>Подпись лечащего:</span><span class="ms-rx-script">твой пациент</span></div>
+      </div>
+    </section>
+
+    <!-- V. СНИМКИ -->
+    <section id="snimki">
+      <div class="ms-sechead ms-reveal">
+        <span><span class="ms-secnum">V.</span> СНИМКИ · АРХИВ НАБЛЮДЕНИЙ</span>
+        <span>НАЖМИ НА СНИМОК · УВЕЛИЧИВАЕТСЯ</span>
+      </div>
+      <h2 class="ms-h2 ms-reveal">Архив <em>наблюдений</em><span class="ms-dot">.</span></h2>
+      <p class="ms-sub ms-reveal">Снимки из истории болезни. Каждое обследование подтверждает: пациентка — самая красивая в отделении.</p>
+
+      <div class="ms-gal">
+        <button class="ms-gal-item ms-reveal" data-cap="FIG. 06 — Золотой час · обследование пройдено">
+          <img src="photos/tulips.jpg" alt="Тюльпаны, золотой час" loading="lazy">
+          <span class="ms-gal-cap"><span>FIG. 06</span><span>ЗОЛОТОЙ ЧАС</span></span>
+        </button>
+        <button class="ms-gal-item ms-reveal" data-cap="FIG. 07 — Доставлено 51 роза · состояние улучшилось">
+          <img src="photos/roses.jpg" alt="Букет роз" loading="lazy">
+          <span class="ms-gal-cap"><span>FIG. 07</span><span>ДОЗА РОЗ</span></span>
+        </button>
+        <button class="ms-gal-item ms-reveal" data-cap="FIG. 08 — Поцелуй на фоне неба · терапия продолжается">
+          <img src="photos/sky.jpg" alt="Поцелуй в небе" loading="lazy">
+          <span class="ms-gal-cap"><span>FIG. 08</span><span>НЕБЕСНЫЙ ПРОТОКОЛ</span></span>
+        </button>
+        <button class="ms-gal-item ms-reveal" data-cap="FIG. 09 — Чёрно-белый снимок · красота в диагнозе не нуждается">
+          <img src="photos/editorial.jpg" alt="Чёрно-белый портрет" loading="lazy">
+          <span class="ms-gal-cap"><span>FIG. 09</span><span>РЕДАКЦИОННЫЙ СНИМОК</span></span>
+        </button>
+        <button class="ms-gal-item ms-reveal" data-cap="FIG. 10 — Вечерняя выписка · город сзади, она впереди">
+          <img src="photos/night.jpg" alt="Вечерний город" loading="lazy">
+          <span class="ms-gal-cap"><span>FIG. 10</span><span>ВЕЧЕРНИЙ ПРОТОКОЛ</span></span>
+        </button>
+        <button class="ms-gal-item ms-reveal" data-cap="FIG. 11 — Полевые испытания · результат: влюблён окончательно">
+          <img src="photos/dress.jpg" alt="Закат и подсолнухи" loading="lazy">
+          <span class="ms-gal-cap"><span>FIG. 11</span><span>ПОЛЕВЫЕ ИСПЫТАНИЯ</span></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- VI. ПРОГНОЗ -->
+    <section id="prognoz">
+      <div class="ms-sechead ms-reveal">
+        <span><span class="ms-secnum">VI.</span> ПРОГНОЗ · ЛИЧНОЕ ПИСЬМО В КАРТУ</span>
+        <span>ПРОЧИТАТЬ ОДИН РАЗ · ДЕЙСТВУЕТ ВЕЧНО</span>
+      </div>
+      <h2 class="ms-h2 ms-reveal">Прогноз: <em>навсегда</em><span class="ms-dot">.</span></h2>
+
+      <div class="ms-fin ms-reveal">
+        <div class="ms-fin-letter">
+          <p>Наташа, солнышко, малыш, роднулечка.</p>
+          <p>Пять лет назад я пришёл на приём — и с тех пор не хочу выписываться. Ты — мой самый точный диагноз и моё единственное лечение. Когда тебя нет рядом, я скучаю так, что это видно даже по кардиограмме выше. А когда ты есть — вообще ничего не болит.</p>
+          <p>Пусть в карте будет записано ровно это: пациент здоров, потому что рядом ты. Пациент скучает, потому что любит. Пациент намерен оставаться твоим — <strong>пожизненно, без рецептов и перерывов</strong>.</p>
+          <p>Это не история болезни. Это история любви, которую записали в медицинский журнал, чтобы она точно сохранилась. Сохранилась, Наташа. Навсегда.</p>
+          <p class="ms-fin-sign">— Твой пациент, твой врач и твой человек.</p>
+        </div>
+        <div class="ms-fin-actions">
+          <button class="ms-fin-btn" id="ms-accept" type="button">Принять диагноз <i data-lucide="heart-pulse" aria-hidden="true"></i></button>
+          <span class="ms-fin-hint">побочный эффект: улыбка</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="ms-foot">
+      <span>ИСТОРИЯ БОЛЕЗНИ № 001 · ОКОНЧЕНА · ОЖИДАЕТ ВСТРЕЧИ</span>
+      <small>составлено вручную, для единственной читательницы</small>
+    </footer>
+  </div>
+
+  <div class="ms-lightbox" id="ms-lightbox" role="dialog" aria-label="Просмотр снимка">
+    <img src="" alt="">
+    <span class="ms-lb-cap"></span>
+  </div>
+  <div class="ms-confetti" id="ms-confetti"></div>
+</div>
+
+<script>
+  (function () {
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // появление секций при скролле
+    var revealEls = document.querySelectorAll('.ms-reveal');
+    if ('IntersectionObserver' in window && !reduced) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { en.target.classList.add('ms-in'); io.unobserve(en.target); }
+        });
+      }, { threshold: 0.12 });
+      revealEls.forEach(function (el) { io.observe(el); });
+    } else {
+      revealEls.forEach(function (el) { el.classList.add('ms-in'); });
+    }
+
+    // лайтбокс для снимков
+    var lb = document.getElementById('ms-lightbox');
+    var lbImg = lb.querySelector('img');
+    var lbCap = lb.querySelector('.ms-lb-cap');
+    document.querySelectorAll('.ms-gal-item').forEach(function (item) {
+      item.addEventListener('click', function () {
+        var img = item.querySelector('img');
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        lbCap.textContent = item.getAttribute('data-cap') || '';
+        lb.classList.add('ms-open');
+      });
+    });
+    lb.addEventListener('click', function () { lb.classList.remove('ms-open'); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') lb.classList.remove('ms-open');
+    });
+
+    // «принять диагноз» — дождь из сердечек
+    var btn = document.getElementById('ms-accept');
+    var conf = document.getElementById('ms-confetti');
+    var glyphs = ['♥', '💗', '❤', '💕'];
+    function burst() {
+      for (var i = 0; i < 34; i++) {
+        var s = document.createElement('span');
+        s.textContent = glyphs[i % glyphs.length];
+        var x = (window.innerWidth / 2) + (Math.random() - 0.5) * 320;
+        s.style.left = x + 'px';
+        s.style.top = (window.innerHeight * 0.6) + 'px';
+        s.style.setProperty('--dx', ((Math.random() - 0.5) * 520) + 'px');
+        s.style.setProperty('--dy', (-window.innerHeight * (0.5 + Math.random() * 0.4)) + 'px');
+        s.style.setProperty('--rot', ((Math.random() - 0.5) * 360) + 'deg');
+        s.style.fontSize = (14 + Math.random() * 22) + 'px';
+        s.style.color = Math.random() > 0.5 ? '#e8553f' : '#f7b9c4';
+        conf.appendChild(s);
+        (function (node) { window.setTimeout(function () { node.remove(); }, 2700); })(s);
+      }
+    }
+    if (btn) btn.addEventListener('click', function () {
+      if (!reduced) burst();
+      btn.textContent = 'Диагноз принят. Я тоже тебя люблю ♥';
+    });
+  })();
+</script>

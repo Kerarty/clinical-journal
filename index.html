@@ -1,0 +1,1461 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>История болезни № 001 — для Наташи</title>
+<meta name="description" content="Личный клинический журнал. Доступ только для одного читателя.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#efe7d2">
+<meta property="og:title" content="История болезни № 001">
+<meta property="og:description" content="Диагноз поставлен. Лечение назначено. Прогноз: навсегда.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ctext%20y='.9em'%20font-size='90'%3E%F0%9F%AB%80%3C/text%3E%3C/svg%3E">
+<style>html{background:#efe7d2}body{margin:0}</style>
+</head>
+<body>
+
+<div id="medjournal-hero" class="mh-root">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap">
+  <style>
+    .mh-root {
+      --mh-paper: #efe7d2;
+      --mh-paper2: #f7f0df;
+      --mh-ink: #16130f;
+      --mh-ink60: rgba(22, 19, 15, .62);
+      --mh-ink40: rgba(22, 19, 15, .4);
+      --mh-line: rgba(22, 19, 15, .16);
+      --mh-coral: #e8553f;
+      --mh-coral-deep: #bf3a2b;
+      position: relative;
+      background: var(--mh-paper);
+      color: var(--mh-ink);
+      font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      overflow: hidden;
+    }
+    .mh-grain {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .05;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2"/><feColorMatrix type="saturate" values="0"/></filter><rect width="240" height="240" filter="url(%23n)" opacity="0.6"/></svg>');
+    }
+    .mh-wrap {
+      position: relative;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 18px 22px 30px;
+    }
+    .mh-mast {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--mh-line);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--mh-ink60);
+    }
+    .mh-mast span { display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; }
+    .mh-mast svg { width: 13px; height: 13px; color: var(--mh-coral); }
+    .mh-mast .mh-mast-num { color: var(--mh-ink); font-weight: 700; }
+    .mh-hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 34px;
+      padding-top: 30px;
+    }
+    @media (min-width: 880px) {
+      .mh-hero { grid-template-columns: 1.05fr .95fr; gap: 44px; padding-top: 40px; }
+    }
+    .mh-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      color: var(--mh-coral-deep);
+      margin-bottom: 18px;
+    }
+    .mh-label::before { content: ""; width: 26px; height: 2px; background: var(--mh-coral); }
+    .mh-label .mh-case { color: var(--mh-ink40); font-weight: 600; letter-spacing: 1.6px; }
+    .mh-root h1 {
+      margin: 0 0 20px;
+      font-weight: 900;
+      font-size: clamp(2.1rem, 7.2vw, 4.9rem);
+      line-height: .98;
+      letter-spacing: -.03em;
+    }
+    .mh-root h1 em {
+      font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      font-style: italic;
+      font-weight: 500;
+      letter-spacing: -.01em;
+      font-size: .98em;
+    }
+    .mh-root h1 .mh-dot { color: var(--mh-coral); }
+    .mh-lead {
+      margin: 0 0 26px;
+      max-width: 46ch;
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--mh-ink60);
+    }
+    .mh-lead strong { color: var(--mh-ink); font-weight: 700; }
+    .mh-lead svg { width: 14px; height: 14px; vertical-align: -2px; color: var(--mh-coral-deep); }
+    .mh-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 14px 18px; }
+    .mh-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: var(--mh-ink);
+      color: var(--mh-paper);
+      border-radius: 999px;
+      padding: 13px 24px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background .2s ease;
+    }
+    .mh-btn:hover { background: var(--mh-coral-deep); color: #fff; }
+    .mh-btn svg { width: 15px; height: 15px; }
+    .mh-hint { font-size: 11px; color: var(--mh-ink40); letter-spacing: .4px; }
+    .mh-plate {
+      position: relative;
+      min-height: 420px;
+      border-radius: 4px;
+    }
+    .mh-brush {
+      position: absolute;
+      top: 3%;
+      left: 5%;
+      width: min(80%, 355px);
+      transform: rotate(-10deg);
+    }
+    .mh-dots {
+      position: absolute;
+      top: 4%;
+      left: 6%;
+      width: 120px;
+      height: 78px;
+      background-image: radial-gradient(circle, rgba(22,19,15,.28) 1.2px, transparent 1.4px);
+      background-size: 12px 12px;
+    }
+    .mh-square {
+      position: absolute;
+      right: 10%;
+      bottom: 16%;
+      width: 96px;
+      height: 96px;
+      border: 1px solid var(--mh-ink);
+      opacity: .5;
+    }
+    .mh-cross {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      opacity: .5;
+    }
+    .mh-cross::before, .mh-cross::after { content: ""; position: absolute; background: var(--mh-ink); }
+    .mh-cross::before { left: 50%; top: 0; width: 1px; height: 100%; }
+    .mh-cross::after { top: 50%; left: 0; height: 1px; width: 100%; }
+    .mh-cross.tl { top: 0; left: 0; }
+    .mh-cross.tr { top: 0; right: 0; }
+    .mh-cross.bl { bottom: 40px; left: 0; }
+    .mh-cross.br { bottom: 40px; right: 0; }
+    .mh-plate-tag {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      font-size: 11px;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+      color: var(--mh-ink40);
+    }
+    .mh-heartzone {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -52%);
+      width: min(66%, 320px);
+      aspect-ratio: 220 / 200;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+    .mh-heart3d {
+      position: absolute;
+      inset: -20% -12%;
+      display: none;
+    }
+    .mh-heart3d.on { display: block; }
+    .mh-heart3d canvas {
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+      cursor: grab;
+      touch-action: none;
+    }
+    .mh-heart3d canvas:active { cursor: grabbing; }
+    .mh-heart-shadow {
+      position: absolute;
+      left: 50%;
+      bottom: 4%;
+      width: 62%;
+      height: 22px;
+      transform: translateX(-50%);
+      background: radial-gradient(ellipse at center, rgba(148, 40, 28, .3) 0%, rgba(148, 40, 28, 0) 68%);
+      filter: blur(3px);
+    }
+    .mh-heartzone svg.mh-heart-svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 20px 34px rgba(185, 53, 36, .32));
+      transition: filter .25s ease;
+      animation: mhbeat 1s cubic-bezier(.4, 0, .6, 1) infinite;
+      transform-origin: 50% 55%;
+    }
+    .mh-root.mh-excited .mh-heartzone svg.mh-heart-svg {
+      animation-duration: .47s;
+      filter: drop-shadow(0 24px 46px rgba(185, 53, 36, .45)) drop-shadow(0 0 30px rgba(232, 85, 63, .4));
+    }
+    .mh-sweep { animation: mhswipe 5.6s cubic-bezier(.55, .1, .4, .9) infinite; will-change: transform; }
+    @keyframes mhswipe {
+      0%, 52% { transform: translateX(-150px); }
+      88%, 100% { transform: translateX(330px); }
+    }
+    @keyframes mhbeat {
+      0% { transform: scale(1); }
+      12% { transform: scale(1.115); }
+      24% { transform: scale(1); }
+      36% { transform: scale(1.06); }
+      55% { transform: scale(1); }
+      100% { transform: scale(1); }
+    }
+    .mh-idx {
+      position: absolute;
+      right: 0;
+      top: 42%;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      font-size: 11px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--mh-ink40);
+    }
+    @media (max-width: 879px) {
+      .mh-idx {
+        top: auto;
+        bottom: 58px;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: row;
+        gap: 16px;
+        white-space: nowrap;
+      }
+    }
+    .mh-idx b { color: var(--mh-coral); font-style: italic; font-weight: 700; margin-right: 6px; }
+    .mh-idx .on { color: var(--mh-ink); font-weight: 700; }
+    .mh-fig {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 10px;
+      border-top: 1px solid var(--mh-line);
+      font-size: 11px;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: var(--mh-ink40);
+    }
+    .mh-stamp {
+      position: absolute;
+      top: -6px;
+      left: -4px;
+      transform: rotate(-8deg);
+      border: 2px solid rgba(191, 58, 43, .75);
+      color: rgba(191, 58, 43, .85);
+      border-radius: 6px;
+      padding: 9px 13px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      background: rgba(247, 240, 223, .6);
+    }
+    @media (min-width: 880px) {
+      .mh-stamp { left: auto; right: -6px; top: -10px; }
+    }
+    .mh-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      margin-top: 40px;
+      scroll-margin-top: 20px;
+    }
+    .mh-stat {
+      background: var(--mh-paper2);
+      border: 1px solid var(--mh-line);
+      border-radius: 10px;
+      padding: 16px 18px 14px;
+      position: relative;
+    }
+    .mh-stat .mh-k {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      font-size: 11px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--mh-ink40);
+      margin-bottom: 12px;
+      white-space: nowrap;
+    }
+    .mh-stat .mh-k b { color: var(--mh-coral); font-style: italic; }
+    .mh-stat .mh-v { font-size: 34px; font-weight: 800; letter-spacing: -.02em; line-height: 1; }
+    .mh-stat .mh-v small { font-size: 15px; font-weight: 600; color: var(--mh-ink60); margin-left: 4px; }
+    .mh-stat .mh-sub { margin-top: 8px; font-size: 11px; color: var(--mh-ink60); letter-spacing: .3px; }
+    .mh-stat-note {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--mh-ink40);
+      letter-spacing: .6px;
+    }
+    .mh-stat-note svg { width: 13px; height: 13px; color: var(--mh-coral-deep); }
+    .mh-ecg { margin-top: 34px; border-top: 1px solid var(--mh-line); padding-top: 16px; }
+    .mh-ecg-head {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .mh-ecg-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--mh-ink60);
+      font-weight: 600;
+    }
+    .mh-ecg-title svg { width: 14px; height: 14px; color: var(--mh-coral-deep); }
+    .mh-bpm-chip {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 8px;
+      border: 1px solid var(--mh-line);
+      border-radius: 999px;
+      padding: 7px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .8px;
+      transition: border-color .2s ease, color .2s ease;
+    }
+    .mh-bpm-chip .mh-bpm-note { font-weight: 500; font-size: 11px; color: var(--mh-ink40); letter-spacing: 1px; }
+    .mh-root.mh-excited .mh-bpm-chip { border-color: var(--mh-coral); color: var(--mh-coral-deep); }
+    .mh-root.mh-excited .mh-bpm-chip .mh-bpm-note { color: var(--mh-coral-deep); }
+    .mh-canvas-box {
+      position: relative;
+      height: 112px;
+      border: 1px solid var(--mh-line);
+      border-radius: 6px;
+      background-image: radial-gradient(circle, rgba(22,19,15,.14) 1px, transparent 1.2px);
+      background-size: 14px 14px;
+    }
+    .mh-canvas-box canvas { display: block; width: 100%; height: 100%; }
+    .mh-foot {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 24px;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: 30px;
+      padding-top: 14px;
+      border-top: 1px solid var(--mh-line);
+      font-size: 11px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--mh-ink60);
+      font-weight: 600;
+    }
+    .mh-foot small {
+      font-size: 11px;
+      letter-spacing: .4px;
+      text-transform: none;
+      font-weight: 400;
+      color: var(--mh-ink40);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .mh-heartzone svg.mh-heart-svg { animation: none; transition: none; }
+      .mh-sweep { animation: none; }
+      .mh-btn { transition: none; }
+    }
+  </style>
+
+  <div class="mh-grain"></div>
+  <div class="mh-wrap">
+    <header class="mh-mast">
+      <span><i data-lucide="heart-pulse" aria-hidden="true"></i> ИСТОРИЯ БОЛЕЗНИ <b class="mh-mast-num">N° 001</b></span>
+      <span>ОТДЕЛЕНИЕ ЛЮБВИ И ТОСКИ · ЛИСТ 1 ИЗ 1</span>
+      <span>ПАЦИЕНТ: НАТАША · КУРИРУЕТ: Я</span>
+    </header>
+
+    <section class="mh-hero">
+      <div class="mh-copy">
+        <div class="mh-label">КЛИНИЧЕСКИЙ СЛУЧАЙ <span class="mh-case" id="mh-case">N° …</span></div>
+        <h1>У меня <em>неизлечимая</em> форма любви&nbsp;— и я <em>отказался</em> от лечения<span class="mh-dot">.</span></h1>
+        <p class="mh-lead">
+          <i data-lucide="stethoscope" aria-hidden="true"></i>
+          Клиническое наблюдение с 19.10.2021. Рецидивы острой тоски зафиксированы при каждой разлуке.
+          Единственное признанное средство — <strong>Наташа</strong>. Принимать ежедневно, без ограничений.
+        </p>
+        <div class="mh-actions">
+          <a class="mh-btn" href="#mh-stats">Что назначено <i data-lucide="arrow-down" aria-hidden="true"></i></a>
+          <span class="mh-hint">нажми на сердце — увидишь тахикардию</span>
+        </div>
+      </div>
+
+      <div class="mh-plate">
+        <div class="mh-plate-tag">PLATE N° 01</div>
+        <svg class="mh-brush" viewBox="0 0 260 260" aria-hidden="true">
+          <g transform="rotate(-12 130 130)">
+            <path d="M196 60 C 232 96 236 152 208 192 C 182 228 128 240 84 218" fill="none" stroke="#e8553f" stroke-width="17" stroke-linecap="round" opacity=".85"/>
+            <path d="M196 60 C 232 96 236 152 208 192" fill="none" stroke="#ef6a4f" stroke-width="24" stroke-linecap="round" opacity=".45"/>
+            <path d="M84 218 C 56 200 40 168 42 132" fill="none" stroke="#c73f2e" stroke-width="12" stroke-linecap="round" opacity=".55"/>
+            <path d="M46 96 C 58 64 88 42 124 38" fill="none" stroke="#e8553f" stroke-width="10" stroke-linecap="round" opacity=".5"/>
+            <circle cx="234" cy="44" r="6" fill="#e8553f" opacity=".8"/>
+            <circle cx="36" cy="210" r="5" fill="#bf3a2b" opacity=".7"/>
+            <circle cx="244" cy="176" r="4" fill="#c73f2e" opacity=".6"/>
+            <circle cx="70" cy="26" r="4" fill="#e8553f" opacity=".6"/>
+            <circle cx="250" cy="120" r="3" fill="#e8553f" opacity=".5"/>
+          </g>
+        </svg>
+        <div class="mh-dots"></div>
+        <div class="mh-square"></div>
+        <span class="mh-cross tl"></span><span class="mh-cross tr"></span>
+        <span class="mh-cross bl"></span><span class="mh-cross br"></span>
+
+        <div class="mh-heartzone" id="mh-heartzone" role="button" aria-label="Сердце пациента — поверни и нажми, чтобы увидеть тахикардию">
+          <div class="mh-heart-shadow"></div>
+          <div class="mh-heart3d" id="mh-heart3d"></div>
+          <svg class="mh-heart-svg" id="mh-heart-svg-fb" viewBox="0 0 220 200" aria-hidden="true">
+            <defs>
+              <path id="mhHeartP" d="M110 185 C 60 140 12 106 12 62 C 12 30 36 12 64 12 C 84 12 100 22 110 40 C 120 22 136 12 156 12 C 184 12 208 30 208 62 C 208 106 160 140 110 185 Z"/>
+              <clipPath id="mhHeartClip"><use href="#mhHeartP"/></clipPath>
+              <linearGradient id="mh-hg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ff9273"/>
+                <stop offset=".38" stop-color="#ef5b42"/>
+                <stop offset=".78" stop-color="#d63f2c"/>
+                <stop offset="1" stop-color="#b52a1e"/>
+              </linearGradient>
+              <radialGradient id="mh-vol" cx=".3" cy=".22" r=".85">
+                <stop offset="0" stop-color="#ffffff" stop-opacity=".34"/>
+                <stop offset=".45" stop-color="#ffffff" stop-opacity=".08"/>
+                <stop offset="1" stop-color="#7a1d14" stop-opacity=".28"/>
+              </radialGradient>
+              <linearGradient id="mh-gloss" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ffffff" stop-opacity=".55"/>
+                <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+              </linearGradient>
+              <linearGradient id="mh-sweepG" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
+                <stop offset=".5" stop-color="#ffffff" stop-opacity=".3"/>
+                <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+              </linearGradient>
+              <filter id="mh-soft" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur stdDeviation="6"/>
+              </filter>
+              <filter id="mh-soft2" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur stdDeviation="2.2"/>
+              </filter>
+            </defs>
+            <g clip-path="url(#mhHeartClip)">
+              <use href="#mhHeartP" fill="url(#mh-hg)"/>
+              <use href="#mhHeartP" fill="url(#mh-vol)"/>
+              <ellipse cx="110" cy="26" rx="16" ry="9" fill="#8c2118" opacity=".3" filter="url(#mh-soft2)"/>
+              <ellipse cx="110" cy="152" rx="72" ry="42" fill="#8c1d12" opacity=".3" filter="url(#mh-soft)"/>
+              <ellipse cx="78" cy="40" rx="62" ry="34" fill="url(#mh-gloss)" filter="url(#mh-soft)" transform="rotate(-18 78 40)"/>
+              <ellipse cx="66" cy="44" rx="26" ry="13" fill="#ffffff" opacity=".75" filter="url(#mh-soft2)" transform="rotate(-20 66 44)"/>
+              <ellipse cx="146" cy="52" rx="10" ry="5" fill="#ffffff" opacity=".5" filter="url(#mh-soft2)" transform="rotate(-24 146 52)"/>
+              <path d="M150 140 C 176 120 196 96 200 74" stroke="#ff9d85" stroke-width="5" fill="none" opacity=".4" filter="url(#mh-soft2)"/>
+              <g class="mh-sweep">
+                <rect x="85" y="-140" width="50" height="480" fill="url(#mh-sweepG)" transform="rotate(20 110 100)" filter="url(#mh-soft2)"/>
+              </g>
+            </g>
+            <use href="#mhHeartP" fill="none" stroke="#9e2418" stroke-width="1.4" opacity=".5"/>
+          </svg>
+        </div>
+
+        <div class="mh-idx">
+          <span class="on"><b>01</b>БЬЁТСЯ</span>
+          <span><b>02</b>СКУЧАЕТ</span>
+          <span><b>03</b>ЖДЁТ</span>
+        </div>
+        <div class="mh-fig"><span>FIG. 1 — СЕРДЦЕ ПАЦИЕНТА, ПРЯМОЙ СЛАЙД</span><span>МАСШТАБ 1:1</span></div>
+        <div class="mh-stamp">СЕКРЕТНО · ДЛЯ ЕДИНСТВЕННОЙ ЧИТАТЕЛЬНИЦЫ</div>
+      </div>
+    </section>
+
+    <section class="mh-stats" id="mh-stats">
+      <div class="mh-stat">
+        <div class="mh-k"><b>01</b><span>ДНЕЙ ЗНАКОМЫ</span></div>
+        <div class="mh-v" id="mh-d-met">…</div>
+        <div class="mh-sub">с 01.09.2021 · счёт продолжается</div>
+      </div>
+      <div class="mh-stat">
+        <div class="mh-k"><b>02</b><span>ДНЕЙ ВМЕСТЕ</span></div>
+        <div class="mh-v" id="mh-d-tog">…</div>
+        <div class="mh-sub">с 19.10.2021 · без единой жалобы</div>
+      </div>
+      <div class="mh-stat">
+        <div class="mh-k"><b>03</b><span>БЕЗ ТЕБЯ УЖЕ</span></div>
+        <div class="mh-v"><span id="mh-d-apart">…</span><small>дн</small></div>
+        <div class="mh-sub"><span id="mh-clock">--:--:--</span> · встреча была 01.11.2026</div>
+      </div>
+      <div class="mh-stat-note">
+        <i data-lucide="pill" aria-hidden="true"></i>
+        Данные пересчитываются в реальном времени · терапия «объятия» — по требованию, без ограничений
+      </div>
+    </section>
+
+    <section class="mh-ecg">
+      <div class="mh-ecg-head">
+        <span class="mh-ecg-title"><i data-lucide="activity" aria-hidden="true"></i> КАРДИОГРАММА ПАЦИЕНТА (Я)</span>
+        <span class="mh-bpm-chip"><span id="mh-bpm">ЧСС 60 уд/мин</span><span class="mh-bpm-note" id="mh-bpm-note">синусовый ритм · вроде спокойный</span></span>
+      </div>
+      <div class="mh-canvas-box">
+        <canvas id="mh-canvas" aria-label="Анимированная кардиограмма: линия ЭКГ с ударами сердца"></canvas>
+      </div>
+    </section>
+
+    <footer class="mh-foot">
+      <span>ЛИСТ ОКОНЧЕН · ПРОДОЛЖЕНИЕ: «АНАМНЕЗ» →</span>
+      <small>составлено по стандартам влюблённой медицины · побочный эффект: улыбки в общественных местах</small>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var root = document.getElementById('medjournal-hero');
+      var caseEl = document.getElementById('mh-case');
+      var dMet = document.getElementById('mh-d-met');
+      var dTog = document.getElementById('mh-d-tog');
+      var dApart = document.getElementById('mh-d-apart');
+      var clockEl = document.getElementById('mh-clock');
+      var bpmEl = document.getElementById('mh-bpm');
+      var bpmNoteEl = document.getElementById('mh-bpm-note');
+      var heartzone = document.getElementById('mh-heartzone');
+      var canvas = document.getElementById('mh-canvas');
+
+      var MET = new Date(2021, 8, 1);
+      var TOG = new Date(2021, 9, 19);
+      var LAST = new Date(2026, 10, 1);
+      var DAY = 86400000;
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function daysSince(d) {
+        return Math.max(0, Math.floor((Date.now() - d.getTime()) / DAY));
+      }
+
+      function fillCounters() {
+        caseEl.textContent = 'N° ' + daysSince(MET);
+        dMet.textContent = String(daysSince(MET));
+        dTog.textContent = String(daysSince(TOG));
+        dApart.textContent = String(daysSince(LAST));
+        var total = Math.max(0, Math.floor((Date.now() - LAST.getTime()) / 1000));
+        var dd = Math.floor(total / 86400);
+        var hh = Math.floor((total % 86400) / 3600);
+        var mm = Math.floor((total % 3600) / 60);
+        var ss = total % 60;
+        function pad(n) { return (n < 10 ? '0' : '') + n; }
+        clockEl.textContent = dd + ' дн ' + pad(hh) + ':' + pad(mm) + ':' + pad(ss);
+      }
+      fillCounters();
+      if (!reduced) {
+        window.setInterval(fillCounters, 1000);
+      }
+
+      var excited = false;
+      var calmTimer = null;
+      function setExcited(v) {
+        excited = v;
+        root.classList.toggle('mh-excited', v);
+        bpmEl.textContent = v ? 'ЧСС 128 уд/мин' : 'ЧСС 60 уд/мин';
+        bpmNoteEl.textContent = v ? 'тахикардия · думаю о ней' : 'синусовый ритм · вроде спокойный';
+        if (window.__mhHeart) window.__mhHeart.setExcited(v);
+        // при смене ритма лента перечерчивается заново — как смена скорости бумаги
+        ctx.clearRect(0, 0, W, H);
+        sweepX = 0;
+        prevDot = null;
+        lastT = null;
+      }
+      heartzone.addEventListener('pointerenter', function (e) {
+        if (e.pointerType !== 'touch') setExcited(true);
+      });
+      heartzone.addEventListener('pointerleave', function (e) {
+        if (e.pointerType !== 'touch') setExcited(false);
+      });
+      heartzone.addEventListener('pointerdown', function () {
+        if (calmTimer) window.clearTimeout(calmTimer);
+        setExcited(true);
+        calmTimer = window.setTimeout(function () { setExcited(false); }, 3400);
+      });
+
+      var ctx = canvas.getContext('2d');
+      var W = 0, H = 0, sweepX = 0, prevDot = null, lastT = null;
+      var loopStarted = false;
+      var SCALE = 2;
+      var BASE_SPEED_DIV = 4.4;
+      var BEATS_CALM = 4;
+      var BEATS_FAST = 9;
+
+      function wave(p) {
+        function g(c, w) { var d = (p - c) / w; return Math.exp(-0.5 * d * d); }
+        return g(.16, .045) * .18 - g(.245, .02) * .14 + g(.27, .013) * 1.0 - g(.30, .02) * .32 + g(.47, .05) * .34;
+      }
+
+      // узор намертво привязан к позиции на ленте (px), как у настоящего монитора
+      function spacingNow() {
+        return excited ? W / BEATS_FAST : W / BEATS_CALM;
+      }
+      function yFor(px, sp) {
+        return H * 0.62 - wave((px % sp) / sp) * H * 0.34;
+      }
+      function drawRange(a, b, sp) {
+        a = Math.max(0, a);
+        b = Math.min(W, b);
+        if (b - a < 1) return;
+        ctx.beginPath();
+        for (var px = a; px < b; px += 3) {
+          var y = yFor(px, sp);
+          if (px === a) ctx.moveTo(px, y); else ctx.lineTo(px, y);
+        }
+        ctx.lineTo(b, yFor(b, sp));
+        ctx.strokeStyle = '#16130f';
+        ctx.lineWidth = 2;
+        ctx.lineJoin = 'round';
+        ctx.lineCap = 'round';
+        ctx.stroke();
+      }
+
+      function drawStatic() {
+        ctx.clearRect(0, 0, W, H);
+        if (W < 10) return;
+        var sp = W / BEATS_CALM;
+        ctx.beginPath();
+        for (var px = 0; px <= W; px += 2) {
+          var y = yFor(px, sp);
+          if (px === 0) ctx.moveTo(px, y); else ctx.lineTo(px, y);
+        }
+        ctx.strokeStyle = '#16130f';
+        ctx.lineWidth = 2;
+        ctx.lineJoin = 'round';
+        ctx.stroke();
+      }
+
+      function startLoop() {
+        if (loopStarted || reduced) return;
+        loopStarted = true;
+        window.requestAnimationFrame(frame);
+      }
+
+      function sizeCanvas() {
+        var rect = canvas.getBoundingClientRect();
+        if (rect.width < 10 || rect.height < 10) return;
+        W = rect.width;
+        H = rect.height;
+        var bw = Math.max(1, Math.round(W * SCALE));
+        var bh = Math.max(1, Math.round(H * SCALE));
+        if (canvas.width !== bw) canvas.width = bw;
+        if (canvas.height !== bh) canvas.height = bh;
+        ctx.setTransform(SCALE, 0, 0, SCALE, 0, 0);
+        sweepX = 0;
+        prevDot = null;
+        lastT = null;
+        if (reduced) drawStatic();
+        startLoop();
+      }
+      sizeCanvas();
+      if ('ResizeObserver' in window) {
+        new ResizeObserver(sizeCanvas).observe(canvas);
+      } else {
+        window.addEventListener('resize', sizeCanvas);
+      }
+      window.addEventListener('load', sizeCanvas);
+      if (document.fonts && document.fonts.ready && document.fonts.ready.then) {
+        document.fonts.ready.then(function () { sizeCanvas(); });
+      }
+
+      function frame(t) {
+        if (W < 10) {
+          window.requestAnimationFrame(frame);
+          return;
+        }
+        if (lastT === null) lastT = t;
+        var dt = Math.min(0.12, (t - lastT) / 1000);
+        lastT = t;
+        var sp = spacingNow();
+        var speed = W / BASE_SPEED_DIV;
+        var prevX = sweepX;
+        sweepX += speed * dt;
+        var wrapped = false;
+        if (sweepX >= W) {
+          sweepX -= W;
+          wrapped = true;
+        }
+
+        // стереть узкую полосу впереди головки (с учётом перехода через край)
+        var eX = (sweepX + 1) % W;
+        if (eX + 26 <= W) {
+          ctx.clearRect(eX, 0, 26, H);
+        } else {
+          ctx.clearRect(eX, 0, W - eX, H);
+          ctx.clearRect(0, 0, 26 - (W - eX), H);
+        }
+
+        // начисто стереть предыдущую точку и перечертить чернила (узор стационарен)
+        if (prevDot !== null) {
+          var rd = prevDot - 9;
+          if (rd >= 0) {
+            ctx.clearRect(rd, 0, 18, H);
+          } else {
+            ctx.clearRect(0, 0, prevDot + 9, H);
+            ctx.clearRect(W + rd, 0, 9 - prevDot + 1, H);
+          }
+          drawRange(prevDot - 9, prevDot + 9, sp);
+        }
+
+        // дорисовать след головки
+        if (!wrapped) {
+          drawRange(prevX, sweepX, sp);
+        } else {
+          drawRange(prevX, W, sp);
+          drawRange(0, sweepX, sp);
+        }
+
+        // пишущая точка на голове
+        ctx.beginPath();
+        ctx.arc(sweepX, yFor(sweepX, sp), 3, 0, Math.PI * 2);
+        ctx.fillStyle = '#e8553f';
+        ctx.fill();
+        prevDot = sweepX;
+        window.requestAnimationFrame(frame);
+      }
+    })();
+  </script>
+
+  <script type="importmap">
+  {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+  </script>
+  <script type="module">
+  try {
+    const THREE = await import('three');
+    const { OrbitControls } = await import('three/addons/controls/OrbitControls.js');
+    const { GLTFLoader } = await import('three/addons/loaders/GLTFLoader.js');
+    const box = document.getElementById('mh-heart3d');
+    if (!box) throw new Error('no box');
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(38, 1, 1, 2000);
+    camera.position.set(0, 0, 380);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setClearColor(0x000000, 0);
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.05;
+    box.appendChild(renderer.domElement);
+
+    // Классический bezier-контур сердца + выдавливание со скруглённой кромкой
+    const s = new THREE.Shape();
+    s.moveTo(5, 5);
+    s.bezierCurveTo(5, 5, 4, 0, 0, 0);
+    s.bezierCurveTo(-6, 0, -6, 7, -6, 7);
+    s.bezierCurveTo(-6, 11, -3, 15.4, 5, 19);
+    s.bezierCurveTo(12, 15.4, 16, 11, 16, 7);
+    s.bezierCurveTo(16, 7, 16, 0, 10, 0);
+    s.bezierCurveTo(7, 0, 5, 5, 5, 5);
+    const geo = new THREE.ExtrudeGeometry(s, {
+      depth: 3, bevelEnabled: true,
+      bevelThickness: 5, bevelSize: 4.4, bevelSegments: 16, curveSegments: 48
+    });
+    geo.center();
+    geo.scale(6.8, 6.8, 6.8);
+    const pos = geo.attributes.position;
+    for (let i = 0; i < pos.count; i++) {
+      pos.setZ(i, pos.getZ(i) * 1.15);
+    }
+    geo.computeVertexNormals();
+
+    const mat = new THREE.MeshPhysicalMaterial({
+      color: 0xef5b42, metalness: 0, roughness: 0.16,
+      clearcoat: 1, clearcoatRoughness: 0.12,
+      transparent: true, opacity: 0.78,
+      ior: 1.45, reflectivity: 0.85,
+      emissive: 0x521009, emissiveIntensity: 0.35
+    });
+
+    const heart = new THREE.Mesh(geo, mat);
+    heart.rotation.x = 0.06;
+    heart.rotation.z = Math.PI; // контур задаётся в математических координатах — переворачиваем
+    heart.visible = false; // показывается только если готовая модель не загрузилась
+    heart.userData.baseScale = 1;
+    const group = new THREE.Group();
+    group.add(heart);
+    scene.add(group);
+
+    // Готовая анатомическая модель (BodyParts3D, CC BY 4.0) с jsDelivr CDN — не самоделка
+    let beatTarget = heart;
+    const crystalMat = new THREE.MeshPhysicalMaterial({
+      color: 0xe8959f, metalness: 0, roughness: 0.18,
+      clearcoat: 1, clearcoatRoughness: 0.14,
+      transparent: true, opacity: 0.82,
+      ior: 1.4, reflectivity: 0.8,
+      emissive: 0x4a1420, emissiveIntensity: 0.3
+    });
+    new GLTFLoader().load(
+      'https://cdn.jsdelivr.net/gh/organui/heart-3d@c72ce6654ff8e282942f97750d3104f55ef4fc3d/public/models/heart.glb',
+      function (gltf) {
+        const m = gltf.scene;
+        const box = new THREE.Box3().setFromObject(m);
+        const sizev = box.getSize(new THREE.Vector3());
+        const center = box.getCenter(new THREE.Vector3());
+        const sc = 170 / Math.max(sizev.x, sizev.y, sizev.z); // запас, чтобы не обрезалось при вращении
+        m.scale.setScalar(sc);
+        m.position.set(-center.x * sc, -center.y * sc, -center.z * sc);
+        m.rotation.y = -0.55;
+        m.traverse(function (o) { if (o.isMesh) { o.material = crystalMat; } });
+        m.userData.baseScale = sc;
+        group.add(m);
+        heart.visible = false;
+        beatTarget = m;
+        heartModel = m;
+        m.updateMatrixWorld(true);
+        const wbox = new THREE.Box3().setFromObject(m);
+        wbox.getSize(heartWorldSize);
+        placeFlowers();
+      },
+      undefined,
+      function () { heart.visible = true; beatTarget = heart; }
+    );
+
+    // Цветы (Poly Pizza, CC0 · Isa Lousberg) — вплетаются гроздьями по спирали
+    const flowerMat = new THREE.MeshPhysicalMaterial({ color: 0xfce9ef, roughness: 0.3, clearcoat: 0.75, emissive: 0x3a1218, emissiveIntensity: 0.45 });
+    let flowerProto = null;
+    let heartModel = null;
+    const heartWorldSize = new THREE.Vector3();
+    const raycaster = new THREE.Raycaster();
+    function placeFlowers() {
+      if (!flowerProto || !heartModel) return;
+      const fbox = new THREE.Box3().setFromObject(flowerProto);
+      const fmax = Math.max(fbox.getSize(new THREE.Vector3()).x, fbox.getSize(new THREE.Vector3()).y, fbox.getSize(new THREE.Vector3()).z);
+      const tw = 170 * 0.145; // целевой диаметр цветка в мире
+      const sc = heartModel.userData.baseScale;
+      const fls = tw / (fmax * sc);
+      const mq = new THREE.Quaternion();
+      heartModel.getWorldQuaternion(mq).invert();
+      const up = new THREE.Vector3(0, 1, 0);
+      // четыре кучки на поверхности сердца
+      const clusters = [
+        [0.62, 0.52, 0.6],
+        [-0.74, -0.3, 0.4],
+        [0.3, -0.58, -0.6],
+        [-0.62, 0.12, 0.78]
+      ];
+      const center = new THREE.Vector3(0, 0, 0);
+      let rng = 7;
+      function rnd() { rng = (rng * 9301 + 49297) % 233280; return rng / 233280; }
+      clusters.forEach(function (cd) {
+        const d = new THREE.Vector3(cd[0], cd[1], cd[2]).normalize();
+        const maxHalf = Math.max(heartWorldSize.x, heartWorldSize.y, heartWorldSize.z) * 0.65;
+        raycaster.set(center.clone().addScaledVector(d, maxHalf), d.clone().negate());
+        const aHits = raycaster.intersectObject(heartModel, true);
+        if (!aHits.length) return;
+        const anchor = aHits[0].point;
+        const tang1 = new THREE.Vector3(0, 1, 0).cross(d);
+        if (tang1.lengthSq() < 0.01) tang1.set(1, 0, 0);
+        tang1.normalize();
+        const tang2 = new THREE.Vector3().crossVectors(d, tang1).normalize();
+        const spots = [[0, 0], [1, 0.42], [-0.95, 0.3], [0.4, -1.05]];
+        spots.forEach(function (sp) {
+          // боковое смещение по касательной плоскости кучки
+          const lateral = anchor.clone()
+            .addScaledVector(tang1, sp[0] * tw * 0.5 + (rnd() - 0.5) * tw * 0.14)
+            .addScaledVector(tang2, sp[1] * tw * 0.5 + (rnd() - 0.5) * tw * 0.14);
+          // цветок «сажается сверху»: луч строго к центру — первый hit всегда внешняя поверхность
+          raycaster.set(lateral.clone().addScaledVector(d, maxHalf), d.clone().negate());
+          const hits = raycaster.intersectObject(heartModel, true);
+          if (!hits.length) return;
+          const hit = hits[0];
+          // валидация: поверхность прямо под точкой посадки (не бок сосуда) и не у силуэта
+          if (hit.point.distanceTo(lateral) > tw * 0.55) return;
+          if (Math.abs(hit.point.x) > heartWorldSize.x * 0.45 || Math.abs(hit.point.y) > heartWorldSize.y * 0.45) return;
+          const wn = hit.face ? hit.face.normal.clone().transformDirection(hit.object.matrixWorld) : d.clone().negate();
+          wn.normalize();
+          const bloom = flowerProto.clone(true);
+          bloom.scale.setScalar(fls * (0.8 + rnd() * 0.45));
+          const q1 = new THREE.Quaternion().setFromUnitVectors(up, wn);
+          const spin = new THREE.Quaternion().setFromAxisAngle(wn, rnd() * Math.PI * 2);
+          bloom.quaternion.copy(mq).multiply(spin).multiply(q1);
+          bloom.position.copy(heartModel.worldToLocal(hit.point.clone().addScaledVector(wn, tw * 0.08)));
+          heartModel.add(bloom);
+        });
+      });
+    }
+    new GLTFLoader().load(
+      'data:model/gltf-binary;base64,Z2xURgIAAABAeQAAHAgAAEpTT057CiJhc3NldCI6IHsKImdlbmVyYXRvciI6ICJGQlgyZ2xURiB2MC45LjciLAoidmVyc2lvbiI6ICIyLjAiCn0sCiJzY2VuZSI6IDAsCiJidWZmZXJzIjogWwp7CiJieXRlTGVuZ3RoIjogMjg5MzYKfQpdLAoiYnVmZmVyVmlld3MiOiBbCnsKImJ1ZmZlciI6IDAsCiJieXRlTGVuZ3RoIjogMjAxNjcsCiJieXRlT2Zmc2V0IjogMAp9LAp7CiJidWZmZXIiOiAwLAoiYnl0ZUxlbmd0aCI6IDExNTIsCiJieXRlT2Zmc2V0IjogMjAxNjgsCiJ0YXJnZXQiOiAzNDk2Mwp9LAp7CiJidWZmZXIiOiAwLAoiYnl0ZUxlbmd0aCI6IDI4NTYsCiJieXRlT2Zmc2V0IjogMjEzMjAsCiJ0YXJnZXQiOiAzNDk2Mgp9LAp7CiJidWZmZXIiOiAwLAoiYnl0ZUxlbmd0aCI6IDI4NTYsCiJieXRlT2Zmc2V0IjogMjQxNzYsCiJ0YXJnZXQiOiAzNDk2Mgp9LAp7CiJidWZmZXIiOiAwLAoiYnl0ZUxlbmd0aCI6IDE5MDQsCiJieXRlT2Zmc2V0IjogMjcwMzIsCiJ0YXJnZXQiOiAzNDk2Mgp9Cl0sCiJzY2VuZXMiOiBbCnsKIm5hbWUiOiAiUm9vdCBTY2VuZSIsCiJub2RlcyI6IFsKMApdCn0KXSwKImFjY2Vzc29ycyI6IFsKewoiY29tcG9uZW50VHlwZSI6IDUxMjMsCiJ0eXBlIjogIlNDQUxBUiIsCiJjb3VudCI6IDU3NiwKImJ1ZmZlclZpZXciOiAxLAoiYnl0ZU9mZnNldCI6IDAKfSwKewoiY29tcG9uZW50VHlwZSI6IDUxMjYsCiJ0eXBlIjogIlZFQzMiLAoiY291bnQiOiAyMzgsCiJidWZmZXJWaWV3IjogMiwKImJ5dGVPZmZzZXQiOiAwLAoibWluIjogWwotMC4wMDIyNDUzMDkwNjQxNjQ3NiwKLTAuMDAwMTk5OTk5OTk0OTQ3NTc1LAotMC4wMDIyNDUzMTE2MjUzMDE4NApdLAoibWF4IjogWwowLjAwMjI0NTMxNjI4MTkxNDcxLAowLjAwMTE4MzI2MzcyNDY2OTgxLAowLjAwMjI0NTMxMzcyMDc3NzYzCl0KfSwKewoiY29tcG9uZW50VHlwZSI6IDUxMjYsCiJ0eXBlIjogIlZFQzMiLAoiY291bnQiOiAyMzgsCiJidWZmZXJWaWV3IjogMywKImJ5dGVPZmZzZXQiOiAwCn0sCnsKImNvbXBvbmVudFR5cGUiOiA1MTI2LAoidHlwZSI6ICJWRUMyIiwKImNvdW50IjogMjM4LAoiYnVmZmVyVmlldyI6IDQsCiJieXRlT2Zmc2V0IjogMAp9Cl0sCiJpbWFnZXMiOiBbCnsKIm5hbWUiOiAidGlueV90cmVhdHNfdGV4dHVyZV8xLnBuZyIsCiJidWZmZXJWaWV3IjogMCwKIm1pbWVUeXBlIjogImltYWdlL3BuZyIKfQpdLAoic2FtcGxlcnMiOiBbCnt9Cl0sCiJ0ZXh0dXJlcyI6IFsKewoibmFtZSI6ICJiYXNlX2NvbG9yX3RleHR1cmUiLAoic2FtcGxlciI6IDAsCiJzb3VyY2UiOiAwCn0KXSwKIm1hdGVyaWFscyI6IFsKewoibmFtZSI6ICJ0aW55X3RyZWF0c18xIiwKImFscGhhTW9kZSI6ICJPUEFRVUUiLAoiZXh0cmFzIjogewoiZnJvbUZCWCI6IHsKInNoYWRpbmdNb2RlbCI6ICJQaG9uZyIsCiJpc1RydWVQQlIiOiBmYWxzZQp9Cn0sCiJwYnJNZXRhbGxpY1JvdWdobmVzcyI6IHsKImJhc2VDb2xvclRleHR1cmUiOiB7CiJpbmRleCI6IDAsCiJ0ZXhDb29yZCI6IDAKfSwKImJhc2VDb2xvckZhY3RvciI6IFsKMS4wLAoxLjAsCjEuMCwKMS4wCl0sCiJtZXRhbGxpY0ZhY3RvciI6IDAuNDAwMDAwMDA1OTYwNDY0LAoicm91Z2huZXNzRmFjdG9yIjogMS4wCn0KfQpdLAoibWVzaGVzIjogWwp7CiJuYW1lIjogImZsb3dlcl9BIiwKInByaW1pdGl2ZXMiOiBbCnsKIm1hdGVyaWFsIjogMCwKIm1vZGUiOiA0LAoiYXR0cmlidXRlcyI6IHsKIk5PUk1BTCI6IDIsCiJQT1NJVElPTiI6IDEsCiJURVhDT09SRF8wIjogMwp9LAoiaW5kaWNlcyI6IDAKfQpdCn0KXSwKIm5vZGVzIjogWwp7CiJu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EgARADkAEgA5AA4AOgA7ADwAOgA9AD4AOgA/AEAAOgAQAEEAQgBDAEQAQgBFAEYAQgBHAEgAQwBCAEgAQwBJAEQASgBHAEsARwBCAEYARwBGAEsASwBMAEoATQBOAE8ATQBFAFAATQBPAEwATABLAFEATABRAE0ASQBQAEUASQBOAFAASQBDAFIATgBNAFAATgBJAFIARQBRAEsARQBLAEYARQBNAFEARQBEAEkARQBCAEQAUwA/AFQAVABVAFMAVgBXAAoAGgAZAFcAGQAYABwAWABZAFoAWwBaABsAXABdAF4AXABfAGAAXwBcAF4AYQBiAGMAZABlAGYAZQBkAGcAZgBoAGkAZwBqAGsAbABtAG4AbQBvAG4AcABxAHIAcwB0AHUAcwB1AHYAdgB3AHMAeAB5AHIAeAB6AHkAagBnAGQAbwBtAHoAegB4AG8AdwB2AF0AXQBcAHcAewB8AH0AfAB+AH8AfQBuAHsAfQCAAG4AgQBoAIIAaACBAGkAaABmAGUAgwBwAIQAVQBUAIUAVQCFAFkAfwB+AIQAfgB8AHsAhgA9AIcAhwCIAIYAiQCKAAoAiwCMAIoAjACLAGEAjABhAGMAjQCOAI8AkACPAGIAkQCSAJMAkQCUAJUAlACRAJMAlgCXAJgAlgCZAJcAmgCbAJwAmgCdAJ4AnQCaAJwAngCfAKAAoQCiAKMAogCkAKMApQCmAKcAqACpAKoAqQCoAKsArACtAKcArACuAK0AnwCeAJ0ApACiAK4ArgCsAKQArwCrAJIArwCpAKsAkgCRAK8AsACxAKMAsACyALMAsACjALIAswC0ALUAswCyALQAmwC2ALcAmwC4AJwAmwC3ALgAuQClALoAiACHALsAiAC7AI4AtQC0ALoAvAA7AL0AvQC+ALwAvwDAAMEAwgCYAMMAmADCAJYAxADFAMYAxQDEAMcAyADBAJkAyQDKAMsAyQDHAMwAygDJAM0AywDOAMkAzQDJAMwAzwDQANEA0ADPANIA0QDTANQA0gDPANUA0gDVANYA1wDKAM0A2ADZANoA2wDcAN0A3ADeAN8A3QDgANsA4QDeAOIA4QDjAOQA4wDhAOIA0wDRANAAzgDLAOUAzgDlANoA3gDhAN8A3wDdANwAzADmAM0AxwDJAMUA5wDWANUA1QDoAOcA6QDYAMYAvgDqAMAAvgC9AOoA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',
+      function (gltf) {
+        flowerProto = gltf.scene;
+        flowerProto.traverse(function (o) { if (o.isMesh) o.material = flowerMat; });
+        placeFlowers();
+      },
+      undefined,
+      function () {}
+    );
+
+    scene.add(new THREE.HemisphereLight(0xfff4e0, 0x4a2a20, 1.0));
+    const key = new THREE.DirectionalLight(0xffffff, 2.6); key.position.set(140, 190, 260); scene.add(key);
+    const rim = new THREE.DirectionalLight(0xffc9b0, 1.8); rim.position.set(-220, 140, -180); scene.add(rim);
+    const fill = new THREE.DirectionalLight(0xffffff, 0.8); fill.position.set(-160, -90, 220); scene.add(fill);
+
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableZoom = false;
+    controls.enablePan = false;
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.07;
+    controls.rotateSpeed = 0.7;
+    controls.autoRotate = false; // вращаем руками — «немного», без ухода на спину
+    controls.minAzimuthAngle = -0.55;
+    controls.maxAzimuthAngle = 0.55;
+    controls.minPolarAngle = Math.PI * 0.38;
+    controls.maxPolarAngle = Math.PI * 0.6;
+
+    function size() {
+      const r = box.getBoundingClientRect();
+      if (r.width < 10) return;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      renderer.setPixelRatio(dpr);
+      renderer.setSize(r.width, r.height, false);
+      camera.aspect = r.width / r.height;
+      camera.updateProjectionMatrix();
+      if (reduced) renderer.render(scene, camera);
+    }
+    let bpm = 60, targetBpm = 60;
+    window.__mhHeart = { setExcited: function (v) { targetBpm = v ? 128 : 60; } };
+    document.getElementById('mh-heart-svg-fb').style.display = 'none';
+    box.classList.add('on');
+    size(); // контейнер теперь видим — размеры реальные
+    renderer.render(scene, camera); // первый кадр сразу, не дожидаясь rAF
+    if ('ResizeObserver' in window) new ResizeObserver(size).observe(box);
+
+    function thump(p) {
+      const g1 = Math.exp(-Math.pow((p - 0.12) / 0.07, 2));
+      const g2 = Math.exp(-Math.pow((p - 0.36) / 0.09, 2)) * 0.5;
+      return g1 + g2;
+    }
+
+    const clock = new THREE.Clock();
+    const tmp = new THREE.Vector3();
+    function frame() {
+      const dt = Math.min(0.1, clock.getDelta());
+      const t = clock.elapsedTime;
+      bpm += (targetBpm - bpm) * Math.min(1, dt * 3);
+      const beat = reduced ? 0 : thump((t * bpm / 60) % 1);
+      if (beatTarget === heart) heart.rotation.z = Math.PI + Math.sin(t * 0.7) * 0.03;
+      beatTarget.scale.setScalar(beatTarget.userData.baseScale * (1 + beat * 0.075));
+      group.rotation.y = Math.sin(t * 0.45) * 0.09; // мягкое живое покачивание
+      if (!reduced) controls.update();
+      renderer.render(scene, camera);
+      window.requestAnimationFrame(frame);
+    }
+    if (reduced) {
+      renderer.render(scene, camera);
+    } else {
+      window.requestAnimationFrame(frame);
+    }
+  } catch (e) {
+    // WebGL или CDN недоступны — остаётся SVG-сердце
+  }
+  </script>
+</div>
+<style>
+    .ms-root {
+      --ms-paper: #efe7d2;
+      --ms-paper2: #f7f0df;
+      --ms-ink: #16130f;
+      --ms-ink60: rgba(22, 19, 15, .62);
+      --ms-ink40: rgba(22, 19, 15, .4);
+      --ms-line: rgba(22, 19, 15, .16);
+      --ms-coral: #e8553f;
+      --ms-coral-deep: #bf3a2b;
+      position: relative;
+      background: var(--ms-paper);
+      color: var(--ms-ink);
+      font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+      overflow: hidden;
+    }
+    .ms-wrap { position: relative; max-width: 1180px; margin: 0 auto; padding: 10px 22px 40px; }
+    .ms-sechead {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      align-items: baseline;
+      justify-content: space-between;
+      border-top: 1px solid var(--ms-line);
+      padding-top: 14px;
+      margin-top: 26px;
+      font-size: 11px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--ms-ink40);
+      font-weight: 600;
+    }
+    .ms-sechead .ms-secnum { color: var(--ms-coral); font-style: italic; font-size: 13px; }
+    .ms-h2 {
+      margin: 14px 0 8px;
+      font-weight: 900;
+      font-size: clamp(1.7rem, 4.6vw, 3rem);
+      line-height: 1.02;
+      letter-spacing: -.025em;
+    }
+    .ms-h2 em {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: .97em;
+    }
+    .ms-h2 .ms-dot { color: var(--ms-coral); }
+    .ms-sub { max-width: 62ch; font-size: 14px; line-height: 1.65; color: var(--ms-ink60); margin: 0 0 22px; }
+    .ms-sub strong { color: var(--ms-ink); }
+
+    /* появление при скролле */
+    .ms-reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+    .ms-reveal.ms-in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .ms-reveal { opacity: 1; transform: none; transition: none; } }
+
+    /* АНАМНЕЗ */
+    .ms-tl { position: relative; margin: 10px 0 8px; padding-left: 26px; }
+    .ms-tl::before {
+      content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px;
+      width: 1px; background: linear-gradient(var(--ms-coral) 0%, var(--ms-line) 100%);
+    }
+    .ms-tl-item { position: relative; padding: 6px 0 26px; }
+    .ms-tl-item::before {
+      content: ""; position: absolute; left: -23px; top: 14px;
+      width: 9px; height: 9px; border-radius: 50%;
+      background: var(--ms-coral); border: 2px solid var(--ms-paper);
+      box-shadow: 0 0 0 1px var(--ms-coral);
+    }
+    .ms-tl-date {
+      font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--ms-coral-deep); font-weight: 700; margin-bottom: 6px;
+    }
+    .ms-tl-title { font-weight: 800; font-size: 19px; letter-spacing: -.01em; margin-bottom: 8px; }
+    .ms-tl-text { font-size: 14px; line-height: 1.65; color: var(--ms-ink60); max-width: 58ch; margin: 0 0 14px; }
+    .ms-tl-photo {
+      display: block; width: min(420px, 100%);
+      border: 1px solid var(--ms-line); border-radius: 10px;
+      box-shadow: 0 14px 30px rgba(22, 19, 15, .14);
+      transform: rotate(-1.2deg); background: var(--ms-paper2);
+    }
+    .ms-tl-item:nth-child(even) .ms-tl-photo { transform: rotate(1.2deg); }
+    .ms-tl-cap {
+      margin-top: 8px; font-size: 11px; letter-spacing: 1.6px;
+      text-transform: uppercase; color: var(--ms-ink40);
+    }
+
+    /* ДИАГНОЗ */
+    .ms-diag {
+      display: grid; grid-template-columns: 1fr; gap: 24px; align-items: start;
+    }
+    @media (min-width: 880px) { .ms-diag { grid-template-columns: 1.25fr .75fr; } }
+    .ms-diag-card {
+      position: relative; background: var(--ms-paper2);
+      border: 1px solid var(--ms-line); border-radius: 12px;
+      padding: 26px 26px 22px;
+    }
+    .ms-diag-card::after {
+      content: "ПОДТВЕРЖДЕНО"; position: absolute; top: 16px; right: 14px;
+      transform: rotate(8deg);
+      border: 2px solid rgba(191, 58, 43, .7); color: rgba(191, 58, 43, .8);
+      border-radius: 6px; padding: 6px 10px; font-size: 10px; font-weight: 800;
+      letter-spacing: 2px; background: rgba(247, 240, 223, .55);
+    }
+    .ms-diag-row {
+      display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px dashed var(--ms-line);
+      font-size: 13.5px; line-height: 1.5;
+    }
+    .ms-diag-row:last-child { border-bottom: none; }
+    .ms-diag-row b { min-width: 108px; color: var(--ms-ink40); font-weight: 600; font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; padding-top: 3px; }
+    .ms-diag-row span strong { color: var(--ms-coral-deep); }
+    .ms-doc {
+      position: relative; border: 1px solid var(--ms-line); border-radius: 12px;
+      overflow: hidden; background: var(--ms-paper2);
+    }
+    .ms-doc img { display: block; width: 100%; height: auto; }
+    .ms-doc-cap {
+      padding: 10px 14px; font-size: 11px; letter-spacing: 1.6px;
+      text-transform: uppercase; color: var(--ms-ink40);
+      border-top: 1px solid var(--ms-line);
+    }
+
+    /* НАЗНАЧЕНИЕ */
+    .ms-rx {
+      position: relative; background: var(--ms-paper2);
+      border: 1px solid var(--ms-line); border-radius: 12px;
+      padding: 30px 28px 26px; max-width: 720px;
+    }
+    .ms-rx::before {
+      content: "Rx"; position: absolute; top: 10px; right: 22px;
+      font-family: 'Playfair Display', Georgia, serif; font-style: italic;
+      font-size: 44px; color: var(--ms-coral); opacity: .5;
+    }
+    .ms-rx-head { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--ms-ink40); margin-bottom: 16px; font-weight: 600; }
+    .ms-rx-line { display: flex; gap: 12px; padding: 9px 0; border-bottom: 1px dashed var(--ms-line); font-size: 14.5px; line-height: 1.55; }
+    .ms-rx-line:last-of-type { border-bottom: none; }
+    .ms-rx-line .ms-rx-n { color: var(--ms-coral); font-style: italic; font-weight: 700; min-width: 30px; font-family: 'Playfair Display', Georgia, serif; }
+    .ms-rx-line strong { color: var(--ms-ink); }
+    .ms-rx-note { margin-top: 16px; font-size: 12px; color: var(--ms-ink40); line-height: 1.6; }
+    .ms-rx-sign { margin-top: 18px; display: flex; justify-content: space-between; align-items: baseline; font-size: 12px; color: var(--ms-ink60); }
+    .ms-rx-sign .ms-rx-script { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 22px; color: var(--ms-ink); }
+
+    /* ГАЛЕРЕЯ */
+    .ms-gal { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
+    .ms-gal-item {
+      position: relative; border: 1px solid var(--ms-line); border-radius: 10px;
+      overflow: hidden; cursor: pointer; background: #101010; padding: 0;
+    }
+    .ms-gal-item img {
+      display: block; width: 100%; height: 250px; object-fit: cover;
+      filter: contrast(1.04) brightness(.94);
+      transition: filter .25s ease, transform .3s ease;
+    }
+    .ms-gal-item:hover img { filter: none; transform: scale(1.025); }
+    .ms-gal-cap {
+      display: flex; justify-content: space-between; gap: 8px;
+      padding: 9px 12px; font-size: 10.5px; letter-spacing: 1.4px;
+      text-transform: uppercase; color: rgba(247, 240, 223, .8);
+      background: #101010;
+    }
+    .ms-lightbox {
+      position: fixed; inset: 0; z-index: 60;
+      background: rgba(16, 14, 11, .88);
+      display: none; align-items: center; justify-content: center;
+      padding: 26px; cursor: zoom-out;
+    }
+    .ms-lightbox.ms-open { display: flex; }
+    .ms-lightbox img {
+      max-width: min(92vw, 900px); max-height: 86vh;
+      border-radius: 10px; box-shadow: 0 30px 80px rgba(0, 0, 0, .6);
+    }
+    .ms-lightbox .ms-lb-cap {
+      position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%);
+      color: rgba(247, 240, 223, .85); font-size: 11px; letter-spacing: 1.6px; text-transform: uppercase;
+    }
+
+    /* ПРОГНОЗ */
+    .ms-fin {
+      position: relative; background: var(--ms-paper2);
+      border: 1px solid var(--ms-line); border-radius: 14px;
+      padding: 34px 30px; max-width: 760px; margin: 0 auto;
+    }
+    .ms-fin-letter { font-size: 15.5px; line-height: 1.8; color: var(--ms-ink); }
+    .ms-fin-letter p { margin: 0 0 14px; }
+    .ms-fin-letter .ms-fin-sign {
+      font-family: 'Playfair Display', Georgia, serif; font-style: italic;
+      font-size: 21px; margin-top: 20px; color: var(--ms-ink);
+    }
+    .ms-fin-letter strong { color: var(--ms-coral-deep); }
+    .ms-fin-actions { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+    .ms-fin-btn {
+      display: inline-flex; align-items: center; gap: 9px;
+      background: var(--ms-ink); color: var(--ms-paper);
+      border-radius: 999px; padding: 13px 24px;
+      font-size: 12px; font-weight: 600; letter-spacing: 1.6px;
+      text-transform: uppercase; border: none; cursor: pointer;
+      font-family: inherit; transition: background .2s ease;
+    }
+    .ms-fin-btn:hover { background: var(--ms-coral-deep); color: #fff; }
+    .ms-fin-hint { font-size: 11px; color: var(--ms-ink40); }
+    .ms-confetti { position: fixed; inset: 0; pointer-events: none; z-index: 70; overflow: hidden; }
+    .ms-confetti span {
+      position: absolute; font-size: 20px; will-change: transform, opacity;
+      animation: ms-fly 2.6s ease-out forwards;
+    }
+    @keyframes ms-fly {
+      0% { transform: translate(0, 0) rotate(0deg) scale(.7); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translate(var(--dx), var(--dy)) rotate(var(--rot)) scale(1.15); opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) { .ms-confetti span { animation: none; opacity: 0; } }
+
+    .ms-foot {
+      border-top: 1px solid var(--ms-line); margin-top: 34px; padding-top: 16px;
+      display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between;
+      font-size: 11px; letter-spacing: 1.8px; text-transform: uppercase;
+      color: var(--ms-ink60); font-weight: 600;
+    }
+    .ms-foot small { font-size: 11px; letter-spacing: .4px; text-transform: none; font-weight: 400; color: var(--ms-ink40); }
+</style>
+
+<div class="ms-root">
+
+  <div class="ms-wrap">
+
+    <!-- II. АНАМНЕЗ -->
+    <section id="anamnez">
+      <div class="ms-sechead ms-reveal">
+        <span><span class="ms-secnum">II.</span> АНАМНЕЗ · ИСТОРИЯ РАЗВИТИЯ</span>
+        <span>04 ЭПИЗОДА · 5 ЛЕТ НАБЛЮДЕНИЯ</span>
+      </div>
+      <h2 class="ms-h2 ms-reveal">Как болезнь <em>развивалась</em><span class="ms-dot">.</span></h2>
+      <p class="ms-sub ms-reveal">Клиническая картина ясная и <strong>необратимая</strong>: с каждым эпизодом состояние пациента улучшается, а зависимость — закрепляется.</p>
+
+      <div class="ms-tl">
+        <div class="ms-tl-item ms-reveal">
+          <div class="ms-tl-date">01.09.2021 · ЭПИЗОД I</div>
+          <div class="ms-tl-title">Первое обращение</div>
+          <p class="ms-tl-text">Знакомство. Диагностическая ошибка: пациент ещё не знал, что встретил своего единственного лечащего специалиста. Симптомы дебютировали в тот же день — улыбка без видимой причины.</p>
+        </div>
+        <div class="ms-tl-item ms-reveal">
+          <div class="ms-tl-date">19.10.2021 · ЭПИЗОД II</div>
+          <div class="ms-tl-title">Начало системной терапии</div>
+          <p class="ms-tl-text">Начали встречаться. Терапия подействовала с первого приёма. С этого дня наблюдение ведётся непрерывно — без единой жалобы на побочные эффекты.</p>
+        </div>
+        <div class="ms-tl-item ms-reveal">
+          <div class="ms-tl-date">ФИКСАЦИЯ · ЭПИЗОД III</div>
+          <div class="ms-tl-title">Терапия открытым огнём</div>
+          <p class="ms-tl-text">Ночной сеанс у костра. Доказано: рядом с ней время замедляется, а бабочки в животе — не метафора, а документированное явление.</p>
+          <img class="ms-tl-photo" src="photos/bonfire.jpg" alt="Ночь у костра" loading="lazy">
+          <div class="ms-tl-cap">FIG. 02 — Сеанс у костра · эффект присутствия</div>
+        </div>
+        <div class="ms-tl-item ms-reveal">
+          <div class="ms-tl-date">ФИКСАЦИЯ · ЭПИЗОД IV</div>
+          <div class="ms-tl-title">Сеанс в темноте зала</div>
+          <p class="ms-tl-text">Кинотеатр. Фильм не зафиксирован — внимание пациента было полностью занято другом протоколом: держать за руку.</p>
+          <img class="ms-tl-photo" src="photos/cinema.jpg" alt="Кино" loading="lazy">
+          <div class="ms-tl-cap">FIG. 03 — Побочный эффект: учащённое сердцебиение</div>
+        </div>
+        <div class="ms-tl-item ms-reveal">
+          <div class="ms-tl-date">ФИКСАЦИЯ · ЭПИЗОД V</div>
+          <div class="ms-tl-title">Водные процедуры, назначенные вдвоём</div>
+          <p class="ms-tl-text">Бассейн. Температура воды в норме, температура пациента — выше. Реабилитации не подлежит, продлено бессрочно.</p>
+          <img class="ms-tl-photo" src="photos/pool.jpg" alt="Бассейн" loading="lazy">
+          <div class="ms-tl-cap">FIG. 04 — Совместное назначение · летний протокол</div>
+        </div>
+        <div class="ms-tl-item ms-reveal">
+          <div class="ms-tl-date">ФИКСАЦИЯ · ЭПИЗОД VI</div>
+          <div class="ms-tl-title">Прогулочные профилактики</div>
+          <p class="ms-tl-text">Парки, арки, цветочные рамки. Профилактика признана эффективной: без этих прогулок состояние пациента стабильно ухудшается от тоски.</p>
+          <img class="ms-tl-photo" src="photos/park.jpg" alt="Прогулка в парке" loading="lazy">
+          <div class="ms-tl-cap">FIG. 05 — Профилактика в цветочной рамке</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- III. ДИАГНОЗ -->
+    <section id="diagnos">
+      <div class="ms-sechead ms-reveal">
+        <span><span class="ms-secnum">III.</span> ДИАГНОЗ · ЗАКЛЮЧЕНИЕ СПЕЦИАЛИСТА</span>
+        <span>КАБИНЕТ № 19.10 · ОЧЕРЕДЬ: 0 ЧЕЛ.</span>
+      </div>
+      <h2 class="ms-h2 ms-reveal">Поставлен <em>диагноз</em><span class="ms-dot">.</span></h2>
+      <p class="ms-sub ms-reveal">Заключение основано на пяти годах наблюдений, 1892 днях данных и одном безоговорочном сердце.</p>
+
+      <div class="ms-diag ms-reveal">
+        <div class="ms-diag-card">
+          <div class="ms-diag-row"><b>Диагноз</b><span><strong>Хроническая Наташезависимость</strong>, стадия «роднулечка», течение пожизненное.</span></div>
+          <div class="ms-diag-row"><b>Симптомы</b><span>Улыбки без причины · перепроверка телефона каждые 4 минуты · «ещё пять минут» вместо «пора домой» · планирование будущего с одним человеком.</span></div>
+          <div class="ms-diag-row"><b>Триггеры</b><span>Её голос · её смех · слово «солнышко» · фотографии · расстояние свыше 0 км.</span></div>
+          <div class="ms-diag-row"><b>Обострения</b><span>При каждой разлуке. Пик зафиксирован: 5 дней без встречи — уже критическая тоска.</span></div>
+          <div class="ms-diag-row"><b>Сопутствующее</b><span>Счастье. Хроническое, стабильно высокое, лечению не подлежит.</span></div>
+          <div class="ms-diag-row"><b>Прогноз</b><span><strong>Неизлечим.</strong> Пациент отказался от лечения и попросил назначить максимум.</span></div>
+        </div>
+        <div class="ms-doc">
+          <img src="photos/medic.jpg" alt="Лечащий специалист на посту" loading="lazy">
+          <div class="ms-doc-cap">Лечащий специалист — на посту. Диагнозы ставит, тоскует тоже.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IV. НАЗНАЧЕНИЕ -->
+    <section id="recept">
+      <div class="ms-sechead ms-reveal">
+        <span><span class="ms-secnum">IV.</span> НАЗНАЧЕНИЕ · ТЕРАПЕВТИЧЕСКИЙ ПЛАН</span>
+        <span>ФОРМА № 1 · ДЕЙСТВИТЕЛЕН: ВСЕГДА</span>
+      </div>
+      <h2 class="ms-h2 ms-reveal">Назначено <em>пожизненно</em><span class="ms-dot">.</span></h2>
+      <p class="ms-sub ms-reveal">Терапия подобрана индивидуально. Замена не предусмотрена конструкцией.</p>
+
+      <div class="ms-rx ms-reveal">
+        <div class="ms-rx-head">История болезни № 001 · Пациенту: мне · Лечащий: Наташа</div>
+        <div class="ms-rx-line"><span class="ms-rx-n">1.</span><span><strong>Фото Наташи</strong> — принимать 3 раза в день до и после еды. При обострении тоски — вне очереди.</span></div>
+        <div class="ms-rx-line"><span class="ms-rx-n">2.</span><span><strong>Голосовые «солнышко, малыш»</strong> — по требованию, без суточного лимита. Передозировка невозможна физически.</span></div>
+        <div class="ms-rx-line"><span class="ms-rx-n">3.</span><span><strong>Объятия</strong> — курс пожизненный, без перерывов. Пропуск дозы компенсируется удвоенной следующей.</span></div>
+        <div class="ms-rx-line"><span class="ms-rx-n">4.</span><span><strong>Встречи</strong> — как можно чаще. Последний перерыв в 5 дней признан врачебной ошибкой, не повторять.</span></div>
+        <div class="ms-rx-line"><span class="ms-rx-n">5.</span><span><strong>«Роднулечка»</strong> — универсальный antidot. Применять при любой жалобе. Эффективность: 100%.</span></div>
+        <div class="ms-rx-note">Отпуск по рецепту, действующему бессрочно. Повторно не выписывается — курс уже назначен судьбой.</div>
+        <div class="ms-rx-sign"><span>Подпись лечащего:</span><span class="ms-rx-script">твой пациент</span></div>
+      </div>
+    </section>
+
+    <!-- V. СНИМКИ -->
+    <section id="snimki">
+      <div class="ms-sechead ms-reveal">
+        <span><span class="ms-secnum">V.</span> СНИМКИ · АРХИВ НАБЛЮДЕНИЙ</span>
+        <span>НАЖМИ НА СНИМОК · УВЕЛИЧИВАЕТСЯ</span>
+      </div>
+      <h2 class="ms-h2 ms-reveal">Архив <em>наблюдений</em><span class="ms-dot">.</span></h2>
+      <p class="ms-sub ms-reveal">Снимки из истории болезни. Каждое обследование подтверждает: пациентка — самая красивая в отделении.</p>
+
+      <div class="ms-gal">
+        <button class="ms-gal-item ms-reveal" data-cap="FIG. 06 — Золотой час · обследование пройдено">
+          <img src="photos/tulips.jpg" alt="Тюльпаны, золотой час" loading="lazy">
+          <span class="ms-gal-cap"><span>FIG. 06</span><span>ЗОЛОТОЙ ЧАС</span></span>
+        </button>
+        <button class="ms-gal-item ms-reveal" data-cap="FIG. 07 — Доставлено 51 роза · состояние улучшилось">
+          <img src="photos/roses.jpg" alt="Букет роз" loading="lazy">
+          <span class="ms-gal-cap"><span>FIG. 07</span><span>ДОЗА РОЗ</span></span>
+        </button>
+        <button class="ms-gal-item ms-reveal" data-cap="FIG. 08 — Поцелуй на фоне неба · терапия продолжается">
+          <img src="photos/sky.jpg" alt="Поцелуй в небе" loading="lazy">
+          <span class="ms-gal-cap"><span>FIG. 08</span><span>НЕБЕСНЫЙ ПРОТОКОЛ</span></span>
+        </button>
+        <button class="ms-gal-item ms-reveal" data-cap="FIG. 09 — Чёрно-белый снимок · красота в диагнозе не нуждается">
+          <img src="photos/editorial.jpg" alt="Чёрно-белый портрет" loading="lazy">
+          <span class="ms-gal-cap"><span>FIG. 09</span><span>РЕДАКЦИОННЫЙ СНИМОК</span></span>
+        </button>
+        <button class="ms-gal-item ms-reveal" data-cap="FIG. 10 — Вечерняя выписка · город сзади, она впереди">
+          <img src="photos/night.jpg" alt="Вечерний город" loading="lazy">
+          <span class="ms-gal-cap"><span>FIG. 10</span><span>ВЕЧЕРНИЙ ПРОТОКОЛ</span></span>
+        </button>
+        <button class="ms-gal-item ms-reveal" data-cap="FIG. 11 — Полевые испытания · результат: влюблён окончательно">
+          <img src="photos/dress.jpg" alt="Закат и подсолнухи" loading="lazy">
+          <span class="ms-gal-cap"><span>FIG. 11</span><span>ПОЛЕВЫЕ ИСПЫТАНИЯ</span></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- VI. ПРОГНОЗ -->
+    <section id="prognoz">
+      <div class="ms-sechead ms-reveal">
+        <span><span class="ms-secnum">VI.</span> ПРОГНОЗ · ЛИЧНОЕ ПИСЬМО В КАРТУ</span>
+        <span>ПРОЧИТАТЬ ОДИН РАЗ · ДЕЙСТВУЕТ ВЕЧНО</span>
+      </div>
+      <h2 class="ms-h2 ms-reveal">Прогноз: <em>навсегда</em><span class="ms-dot">.</span></h2>
+
+      <div class="ms-fin ms-reveal">
+        <div class="ms-fin-letter">
+          <p>Наташа, солнышко, малыш, роднулечка.</p>
+          <p>Пять лет назад я пришёл на приём — и с тех пор не хочу выписываться. Ты — мой самый точный диагноз и моё единственное лечение. Когда тебя нет рядом, я скучаю так, что это видно даже по кардиограмме выше. А когда ты есть — вообще ничего не болит.</p>
+          <p>Пусть в карте будет записано ровно это: пациент здоров, потому что рядом ты. Пациент скучает, потому что любит. Пациент намерен оставаться твоим — <strong>пожизненно, без рецептов и перерывов</strong>.</p>
+          <p>Это не история болезни. Это история любви, которую записали в медицинский журнал, чтобы она точно сохранилась. Сохранилась, Наташа. Навсегда.</p>
+          <p class="ms-fin-sign">— Твой пациент, твой врач и твой человек.</p>
+        </div>
+        <div class="ms-fin-actions">
+          <button class="ms-fin-btn" id="ms-accept" type="button">Принять диагноз <i data-lucide="heart-pulse" aria-hidden="true"></i></button>
+          <span class="ms-fin-hint">побочный эффект: улыбка</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="ms-foot">
+      <span>ИСТОРИЯ БОЛЕЗНИ № 001 · ОКОНЧЕНА · ОЖИДАЕТ ВСТРЕЧИ</span>
+      <small>составлено вручную, для единственной читательницы</small>
+    </footer>
+  </div>
+
+  <div class="ms-lightbox" id="ms-lightbox" role="dialog" aria-label="Просмотр снимка">
+    <img src="" alt="">
+    <span class="ms-lb-cap"></span>
+  </div>
+  <div class="ms-confetti" id="ms-confetti"></div>
+</div>
+
+<script>
+  (function () {
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // появление секций при скролле
+    var revealEls = document.querySelectorAll('.ms-reveal');
+    if ('IntersectionObserver' in window && !reduced) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { en.target.classList.add('ms-in'); io.unobserve(en.target); }
+        });
+      }, { threshold: 0.12 });
+      revealEls.forEach(function (el) { io.observe(el); });
+    } else {
+      revealEls.forEach(function (el) { el.classList.add('ms-in'); });
+    }
+
+    // лайтбокс для снимков
+    var lb = document.getElementById('ms-lightbox');
+    var lbImg = lb.querySelector('img');
+    var lbCap = lb.querySelector('.ms-lb-cap');
+    document.querySelectorAll('.ms-gal-item').forEach(function (item) {
+      item.addEventListener('click', function () {
+        var img = item.querySelector('img');
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        lbCap.textContent = item.getAttribute('data-cap') || '';
+        lb.classList.add('ms-open');
+      });
+    });
+    lb.addEventListener('click', function () { lb.classList.remove('ms-open'); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') lb.classList.remove('ms-open');
+    });
+
+    // «принять диагноз» — дождь из сердечек
+    var btn = document.getElementById('ms-accept');
+    var conf = document.getElementById('ms-confetti');
+    var glyphs = ['♥', '💗', '❤', '💕'];
+    function burst() {
+      for (var i = 0; i < 34; i++) {
+        var s = document.createElement('span');
+        s.textContent = glyphs[i % glyphs.length];
+        var x = (window.innerWidth / 2) + (Math.random() - 0.5) * 320;
+        s.style.left = x + 'px';
+        s.style.top = (window.innerHeight * 0.6) + 'px';
+        s.style.setProperty('--dx', ((Math.random() - 0.5) * 520) + 'px');
+        s.style.setProperty('--dy', (-window.innerHeight * (0.5 + Math.random() * 0.4)) + 'px');
+        s.style.setProperty('--rot', ((Math.random() - 0.5) * 360) + 'deg');
+        s.style.fontSize = (14 + Math.random() * 22) + 'px';
+        s.style.color = Math.random() > 0.5 ? '#e8553f' : '#f7b9c4';
+        conf.appendChild(s);
+        (function (node) { window.setTimeout(function () { node.remove(); }, 2700); })(s);
+      }
+    }
+    if (btn) btn.addEventListener('click', function () {
+      if (!reduced) burst();
+      btn.textContent = 'Диагноз принят. Я тоже тебя люблю ♥';
+    });
+  })();
+</script>
+</body>
+</html>
